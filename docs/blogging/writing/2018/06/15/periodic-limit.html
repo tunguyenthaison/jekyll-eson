@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="
+  Weak convergence of oscillating functions
+  Uniform integrability, Equi-integrability and Dunford-Pettis Theorem
+
+
+Weak convergence of oscillating functions
+
+
+Let $g\in L^\infty(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then
+
+\[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\]
+
+
+
+
+In what follows we write the integral means Lebesgue integral, and note that it coincides with Riemann integral if the set of discontinuous points of a function is of measure zero, for example $f$ is continuous.
+
+For any $\varepsilon&gt;0$ there is $\delta&gt;0$ such that 
+$\vert| x-y \vert|&lt;\delta$ implies $\vert|f(x)-f(x)\vert|&lt;\varepsilon$ as $f$ is uniformly continuous on $[0,1]$. We write
+
+\[\int_0^1 f(x)g(nx)\;dx 
+        = \sum_{i=0}^{n-1} \int_{\frac{i}{n}}^{\frac{i+1}{n}} f(x)g(nx)dx 
+        = \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy.\]
+
+We observe that, for $n$ large enough then
+
+\[\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right| &lt; \varepsilon \qquad\text{for}\qquad y\in [i,i+1].\]
+
+Let $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$ then
+
+\[\left\vert \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right\vert \leq C\varepsilon\]
+
+and thus
+
+\[\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \left[\frac{1}{n}\sum_{i=0}^{n-1} f\left(\frac{i}{n}\right)\right] \int_{0}^{1} g(y)dy\right| \leq C\varepsilon\]
+
+using the fact that $g$ is periodic with period $1$. Passing $n\to \infty$ and using the convergence of the Riemann sum for $f$, then letting $\varepsilon\to 0$ we obtain the result.
+
+
+
+Remark. We note that a bounded periodic function does not neccessarily Riemann integrable (the Dirichlet function for example). Nevertheless, the above integral could be understood in the sense of Lebesgue integral and the result holds.
+
+The assumption $f\in L^\infty(\mathbb{R})$ can be relaxed to $f\in L^1_{\text{loc}}(\mathbb{R})$ with $f\in L^1([0,1])$.
+
+
+ (relaxed assumption) 
+
+Let $g\in L^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then
+
+\[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\]
+
+
+
+
+The only difference in the proof is instead of using the estimate $\Vert g\Vert_{L^\infty([0,1])}\leq C$, we use
+
+\[C = \int_{[0,1]} |g(x)|dx.\]
+
+Then we have
+
+\[\begin{aligned}       
+    &amp;\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1}   f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right| \\        
+    &amp;\qquad \qquad \leq \frac{1}{n}\sum_{i=0}^{n-1}\int_i^{i+1}\left(\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right||g(y)|\right)dy\\        
+    &amp;\qquad \qquad \leq \frac{\varepsilon}{n}\sum_{i=0}^{n-1}\left(\int_i^{i+1}|g(y)|dy\right) = \varepsilon\Vert g\Vert_{L^1([0,1])} \end{aligned}\]
+
+and the rest of the proof is similar.
+
+
+
+As a consequence, we have the following result on weak convergence for $1&lt;p &lt; \infty$ and weak$^*$ convergence in $L^\infty$.
+
+
+ (weak convergence) 
+
+Let $g\in \mathrm{L}^\infty(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$.
+
+
+  
+    (a) $g_n \rightharpoonup g_0$ weakly in $L^p([0,1])$ for $1&lt; p&lt;\infty$.
+  
+  
+    (b) $g_n \rightharpoonup g_0$ weak$^*$ in $L^\infty([0,1])$. 
+  
+  
+  
+  The dual space of $L^1(I)$ is $L^\infty(I)$, i.e., \(\big(L^1(I)\big)^* = L^\infty(I).\)
+  
+  
+
+
+
+
+
+For part (a), we observe that if $1&lt; p&lt; \infty$ then $\mathrm{C}_c^\infty([0,1])$ is dense in $L^p([0,1])$. Take a test function $\phi \in L^q([0,1])$ where $p^{-1}+q^{-1}=1$, we aim to show that
+
+$ \lim_{n\to 
+\infty} \langle \phi, g_n\rangle = \langle \phi, g\rangle$.
+
+For $\varepsilon&gt;0$ we can find $\phi_\varepsilon\in \mathrm{C}^\infty_c([0,1])$ such that $\Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])} &lt;\varepsilon$, then by Holder’s inequality
+
+\[\left|\int_0^1 \phi(x)g_n(x)\;dx - \int_0^1 \phi_\varepsilon(x)g_n(x)\;dx\right| \leq \Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])}  \Vert g_n\Vert_{L^p([0,1])} \leq C\varepsilon\]
+
+where $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$. Now take $n\to\infty$ using Theorem 2 with $\phi_\varepsilon$ is continuous we obtain
+
+\[\left|
+    \lim_{n\to \infty}\int_0^1 \phi(x)g_n(x)\;dx - \left(\int_0^1 \phi_\varepsilon(x)dx\right) \left( \int_0^1 g(x)\;dx\right)
+\right| 
+\leq C\varepsilon.\]
+
+Since $\Vert \phi_\varepsilon - \phi \Vert_{L^1([0,1])} \leq \Vert \phi_\varepsilon - \phi \Vert_{L^q([0,1])} &lt; \varepsilon$ as $1\leq q$, sending $\varepsilon\to 0$ we obtain the conclusion.
+
+
+
+For part (b), the proof is basically the same, but we only consider test function
+$\phi\in L^1([0,1])$, which still satisfies that $\mathrm{C}_c^\infty([0,1])$ is dense in $L^1([0,1])$.
+
+
+
+Remark.
+
+
+  Theorems Theorem 2 and Theorem 3 are some forms of ergodic property. Here we have used the density of continuous functions in the respective dual spaces. Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces.s
+  The assumption $g\in L^\infty(\mathbb{R})$ can be replaced by $g\in L^p_{\text{loc}}(\mathbb{R})$ for a specific $p \in (0,\infty)$, and the conclusion becomes the weak convergence in $L^p([0,1])$ for that specific $p$.
+
+
+When $p=1$, the techinque we use in the above theorems do not work as $\mathrm{C}^\infty_c([0,1])$ is not dense in $L^\infty([0,1]) = (L^1([0,1))^*$. However if we have an extra assumption then inclusion implies weak convergence in $L^1([0,1])$ as follows.
+
+
+Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$ and $g\in L^p([0,1])$ for some $1&lt;p&lt;\infty$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$, then $ g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$, i.e.,
+
+\[\lim_{n\to \infty} \int_0^1 g_n(x)\phi(x)dx =  \lim_{n\to \infty} \int_0^1 g_0(x)\phi(x)dx \qquad \text{for all}\;\phi\in L^\infty([0,1]).\]
+
+
+
+
+The fact that $g\in L^p([0,1])$ for $p&gt;1$ implies $g\in L^1([0,1])$ as well.
+
+Take $\phi\in L^\infty([0,1])$, we need to show $\langle g_n,\phi \rangle \to \langle g, \phi\rangle$ as $n\to \infty$. Since $g\in L^p([0,1])$, we see that $g_n \in L^p([0,1])$ as well and
+
+\[\Vert g_n\Vert_{L^p}([0,1]) = \Vert g\Vert_{L^p}([0,1]), \qquad n = 1,2,3,\ldots\]
+
+Therefore, take $q \in (0,\infty)$ such that $p^{-1} + q^{-1} = 1$, we can apply Theorem 3 to obtain $g_n\rightharpoonup g$ in $L^p([0,1])$. As $\phi\in L^q([0,1])$ we deduce that
+
+\[\lim_{n\to \infty}\int_0^1 \phi(x)\big(g_n(x) - g(x)\big)dx = 0.\]
+
+
+
+
+
+In general, we can remove this extra assumption $g\in L^p([0,1])$ for some $p&gt;1$ by using the Dunford-Pettis Theorem given belows (Dunford-Pettis Theorem).
+
+
+(weak convergence)
+
+Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$.
+
+
+  (c) $g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$.
+
+
+
+
+
+To apply Dunford-Petties theorem, it is clear that $\Vert g_n\Vert_{L^1([0,1])}  = \Vert g\Vert_{L^1([0,1])}$ for all $n$, thus it is uniformly bounded in $L^1([0,1])$ already. We only need to show that it is equi-integrable. Since tightness is trivial due to $[0,1]$ being a compact (finite) set, we only need to show that $(g_n)$ is uniformly integrable, which is a consequence of the following fact
+
+\[\lim_{M\to \infty}\left( \sup_n \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx\right) = 0.\]
+
+By direct computation, we have
+
+\[\begin{aligned}
+        \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx = \int_0^1 |g(z)|\cdot \mathbb{1}_{\{z\in [0,1]: |g(z)|\geq M\}}(z)\;dz \to 0
+    \end{aligned}\]
+
+uniformly as $M\to \infty$ since
+
+\[|\{z\in [0,1]: |g(z)|\geq M\}| \leq \frac{1}{M}\int_0^1 |g(z)|dz \to 0\]
+
+uniformly as $M\to \infty$. The uniform integrability of $(g_n)$ can be deduced from
+
+\[\begin{aligned}
+    \int_E |g_n(x)|dx &amp;= \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + \int_{E\cap \{|g_n|&lt;M\}} |g_n(x)|dx\\
+    &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx  + M|E| \\
+    &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx  + M\delta.
+\end{aligned}\]
+
+Choose $\delta = (2M)^{-1}\varepsilon$ and we can choose $M$ large so that the right hand side is less than $\varepsilon$.
+
+
+
+Uniform integrability, Equi-integrability and Dunford-Pettis Theorem
+
+Before stating Dunford-Pettis Theorem, we state some definitions.
+
+
+(Equi-integrability).
+
+For $\Omega\subset \mathbb{R}^n$, a family of integrable functions $\mathcal{U}\subset L^1(\Omega)$ is equi-integrable if the following two conditions hold
+
+
+  (Tight) The set $\mathcal{U}$ is tight, i.e., for every $\varepsilon&gt;0$ there exists a measurable set $A$ with finite measure such that (trivially true if $\Omega$ is of finite measure)
+
+
+\[\sup_{u\in \mathcal{U}} \int_{\Omega - A} |u(x)|dx &lt; \varepsilon.\]
+
+
+  (Uniform integrable) For every $\varepsilon &gt; 0$ there exists $\delta &gt; 0$ such that if $E$ is a measurable set with $\vert E\vert  &lt; \delta$ then
+
+
+\[\sup_{u\in \mathcal{U}} \int_E |u(x)|dx &lt; \varepsilon.\]
+
+
+
+
+
+
+
+Now we state the Dunford-Pettis theorem that characterizes weak convergence in $\sigma(L^1,L^\infty)$.
+
+Dunford-Pettis Theorem.
+
+For $\Omega\subset \mathbb{R}^n$, a sequence $(u_n)\subset L^1(\Omega)$ is convergent weakly in $\sigma(L^1,L^\infty)$ if and only if
+
+  The sequence $(u_n)$ is equi-integrable.
+  The sequence $(u_n)$ is uniformly bounded in $L^1$, i.e., $\sup_n \Vert u_n\Vert_{L^1(\Omega)} \leq C$.
+
+
+
+
+
+
+Remarks and Todos.
+
+
+    Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces.
+
+
+
+
+" />
+<meta property="og:description" content="
+  Weak convergence of oscillating functions
+  Uniform integrability, Equi-integrability and Dunford-Pettis Theorem
+
+
+Weak convergence of oscillating functions
+
+
+Let $g\in L^\infty(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then
+
+\[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\]
+
+
+
+
+In what follows we write the integral means Lebesgue integral, and note that it coincides with Riemann integral if the set of discontinuous points of a function is of measure zero, for example $f$ is continuous.
+
+For any $\varepsilon&gt;0$ there is $\delta&gt;0$ such that 
+$\vert| x-y \vert|&lt;\delta$ implies $\vert|f(x)-f(x)\vert|&lt;\varepsilon$ as $f$ is uniformly continuous on $[0,1]$. We write
+
+\[\int_0^1 f(x)g(nx)\;dx 
+        = \sum_{i=0}^{n-1} \int_{\frac{i}{n}}^{\frac{i+1}{n}} f(x)g(nx)dx 
+        = \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy.\]
+
+We observe that, for $n$ large enough then
+
+\[\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right| &lt; \varepsilon \qquad\text{for}\qquad y\in [i,i+1].\]
+
+Let $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$ then
+
+\[\left\vert \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right\vert \leq C\varepsilon\]
+
+and thus
+
+\[\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \left[\frac{1}{n}\sum_{i=0}^{n-1} f\left(\frac{i}{n}\right)\right] \int_{0}^{1} g(y)dy\right| \leq C\varepsilon\]
+
+using the fact that $g$ is periodic with period $1$. Passing $n\to \infty$ and using the convergence of the Riemann sum for $f$, then letting $\varepsilon\to 0$ we obtain the result.
+
+
+
+Remark. We note that a bounded periodic function does not neccessarily Riemann integrable (the Dirichlet function for example). Nevertheless, the above integral could be understood in the sense of Lebesgue integral and the result holds.
+
+The assumption $f\in L^\infty(\mathbb{R})$ can be relaxed to $f\in L^1_{\text{loc}}(\mathbb{R})$ with $f\in L^1([0,1])$.
+
+
+ (relaxed assumption) 
+
+Let $g\in L^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then
+
+\[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\]
+
+
+
+
+The only difference in the proof is instead of using the estimate $\Vert g\Vert_{L^\infty([0,1])}\leq C$, we use
+
+\[C = \int_{[0,1]} |g(x)|dx.\]
+
+Then we have
+
+\[\begin{aligned}       
+    &amp;\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1}   f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right| \\        
+    &amp;\qquad \qquad \leq \frac{1}{n}\sum_{i=0}^{n-1}\int_i^{i+1}\left(\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right||g(y)|\right)dy\\        
+    &amp;\qquad \qquad \leq \frac{\varepsilon}{n}\sum_{i=0}^{n-1}\left(\int_i^{i+1}|g(y)|dy\right) = \varepsilon\Vert g\Vert_{L^1([0,1])} \end{aligned}\]
+
+and the rest of the proof is similar.
+
+
+
+As a consequence, we have the following result on weak convergence for $1&lt;p &lt; \infty$ and weak$^*$ convergence in $L^\infty$.
+
+
+ (weak convergence) 
+
+Let $g\in \mathrm{L}^\infty(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$.
+
+
+  
+    (a) $g_n \rightharpoonup g_0$ weakly in $L^p([0,1])$ for $1&lt; p&lt;\infty$.
+  
+  
+    (b) $g_n \rightharpoonup g_0$ weak$^*$ in $L^\infty([0,1])$. 
+  
+  
+  
+  The dual space of $L^1(I)$ is $L^\infty(I)$, i.e., \(\big(L^1(I)\big)^* = L^\infty(I).\)
+  
+  
+
+
+
+
+
+For part (a), we observe that if $1&lt; p&lt; \infty$ then $\mathrm{C}_c^\infty([0,1])$ is dense in $L^p([0,1])$. Take a test function $\phi \in L^q([0,1])$ where $p^{-1}+q^{-1}=1$, we aim to show that
+
+$ \lim_{n\to 
+\infty} \langle \phi, g_n\rangle = \langle \phi, g\rangle$.
+
+For $\varepsilon&gt;0$ we can find $\phi_\varepsilon\in \mathrm{C}^\infty_c([0,1])$ such that $\Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])} &lt;\varepsilon$, then by Holder’s inequality
+
+\[\left|\int_0^1 \phi(x)g_n(x)\;dx - \int_0^1 \phi_\varepsilon(x)g_n(x)\;dx\right| \leq \Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])}  \Vert g_n\Vert_{L^p([0,1])} \leq C\varepsilon\]
+
+where $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$. Now take $n\to\infty$ using Theorem 2 with $\phi_\varepsilon$ is continuous we obtain
+
+\[\left|
+    \lim_{n\to \infty}\int_0^1 \phi(x)g_n(x)\;dx - \left(\int_0^1 \phi_\varepsilon(x)dx\right) \left( \int_0^1 g(x)\;dx\right)
+\right| 
+\leq C\varepsilon.\]
+
+Since $\Vert \phi_\varepsilon - \phi \Vert_{L^1([0,1])} \leq \Vert \phi_\varepsilon - \phi \Vert_{L^q([0,1])} &lt; \varepsilon$ as $1\leq q$, sending $\varepsilon\to 0$ we obtain the conclusion.
+
+
+
+For part (b), the proof is basically the same, but we only consider test function
+$\phi\in L^1([0,1])$, which still satisfies that $\mathrm{C}_c^\infty([0,1])$ is dense in $L^1([0,1])$.
+
+
+
+Remark.
+
+
+  Theorems Theorem 2 and Theorem 3 are some forms of ergodic property. Here we have used the density of continuous functions in the respective dual spaces. Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces.s
+  The assumption $g\in L^\infty(\mathbb{R})$ can be replaced by $g\in L^p_{\text{loc}}(\mathbb{R})$ for a specific $p \in (0,\infty)$, and the conclusion becomes the weak convergence in $L^p([0,1])$ for that specific $p$.
+
+
+When $p=1$, the techinque we use in the above theorems do not work as $\mathrm{C}^\infty_c([0,1])$ is not dense in $L^\infty([0,1]) = (L^1([0,1))^*$. However if we have an extra assumption then inclusion implies weak convergence in $L^1([0,1])$ as follows.
+
+
+Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$ and $g\in L^p([0,1])$ for some $1&lt;p&lt;\infty$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$, then $ g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$, i.e.,
+
+\[\lim_{n\to \infty} \int_0^1 g_n(x)\phi(x)dx =  \lim_{n\to \infty} \int_0^1 g_0(x)\phi(x)dx \qquad \text{for all}\;\phi\in L^\infty([0,1]).\]
+
+
+
+
+The fact that $g\in L^p([0,1])$ for $p&gt;1$ implies $g\in L^1([0,1])$ as well.
+
+Take $\phi\in L^\infty([0,1])$, we need to show $\langle g_n,\phi \rangle \to \langle g, \phi\rangle$ as $n\to \infty$. Since $g\in L^p([0,1])$, we see that $g_n \in L^p([0,1])$ as well and
+
+\[\Vert g_n\Vert_{L^p}([0,1]) = \Vert g\Vert_{L^p}([0,1]), \qquad n = 1,2,3,\ldots\]
+
+Therefore, take $q \in (0,\infty)$ such that $p^{-1} + q^{-1} = 1$, we can apply Theorem 3 to obtain $g_n\rightharpoonup g$ in $L^p([0,1])$. As $\phi\in L^q([0,1])$ we deduce that
+
+\[\lim_{n\to \infty}\int_0^1 \phi(x)\big(g_n(x) - g(x)\big)dx = 0.\]
+
+
+
+
+
+In general, we can remove this extra assumption $g\in L^p([0,1])$ for some $p&gt;1$ by using the Dunford-Pettis Theorem given belows (Dunford-Pettis Theorem).
+
+
+(weak convergence)
+
+Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$.
+
+
+  (c) $g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$.
+
+
+
+
+
+To apply Dunford-Petties theorem, it is clear that $\Vert g_n\Vert_{L^1([0,1])}  = \Vert g\Vert_{L^1([0,1])}$ for all $n$, thus it is uniformly bounded in $L^1([0,1])$ already. We only need to show that it is equi-integrable. Since tightness is trivial due to $[0,1]$ being a compact (finite) set, we only need to show that $(g_n)$ is uniformly integrable, which is a consequence of the following fact
+
+\[\lim_{M\to \infty}\left( \sup_n \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx\right) = 0.\]
+
+By direct computation, we have
+
+\[\begin{aligned}
+        \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx = \int_0^1 |g(z)|\cdot \mathbb{1}_{\{z\in [0,1]: |g(z)|\geq M\}}(z)\;dz \to 0
+    \end{aligned}\]
+
+uniformly as $M\to \infty$ since
+
+\[|\{z\in [0,1]: |g(z)|\geq M\}| \leq \frac{1}{M}\int_0^1 |g(z)|dz \to 0\]
+
+uniformly as $M\to \infty$. The uniform integrability of $(g_n)$ can be deduced from
+
+\[\begin{aligned}
+    \int_E |g_n(x)|dx &amp;= \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + \int_{E\cap \{|g_n|&lt;M\}} |g_n(x)|dx\\
+    &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx  + M|E| \\
+    &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx  + M\delta.
+\end{aligned}\]
+
+Choose $\delta = (2M)^{-1}\varepsilon$ and we can choose $M$ large so that the right hand side is less than $\varepsilon$.
+
+
+
+Uniform integrability, Equi-integrability and Dunford-Pettis Theorem
+
+Before stating Dunford-Pettis Theorem, we state some definitions.
+
+
+(Equi-integrability).
+
+For $\Omega\subset \mathbb{R}^n$, a family of integrable functions $\mathcal{U}\subset L^1(\Omega)$ is equi-integrable if the following two conditions hold
+
+
+  (Tight) The set $\mathcal{U}$ is tight, i.e., for every $\varepsilon&gt;0$ there exists a measurable set $A$ with finite measure such that (trivially true if $\Omega$ is of finite measure)
+
+
+\[\sup_{u\in \mathcal{U}} \int_{\Omega - A} |u(x)|dx &lt; \varepsilon.\]
+
+
+  (Uniform integrable) For every $\varepsilon &gt; 0$ there exists $\delta &gt; 0$ such that if $E$ is a measurable set with $\vert E\vert  &lt; \delta$ then
+
+
+\[\sup_{u\in \mathcal{U}} \int_E |u(x)|dx &lt; \varepsilon.\]
+
+
+
+
+
+
+
+Now we state the Dunford-Pettis theorem that characterizes weak convergence in $\sigma(L^1,L^\infty)$.
+
+Dunford-Pettis Theorem.
+
+For $\Omega\subset \mathbb{R}^n$, a sequence $(u_n)\subset L^1(\Omega)$ is convergent weakly in $\sigma(L^1,L^\infty)$ if and only if
+
+  The sequence $(u_n)$ is equi-integrable.
+  The sequence $(u_n)$ is uniformly bounded in $L^1$, i.e., $\sup_n \Vert u_n\Vert_{L^1(\Omega)} \leq C$.
+
+
+
+
+
+
+Remarks and Todos.
+
+
+    Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces.
+
+
+
+
+" />
+
+<meta name="author" content="The Timeline" />
+
+
+<meta property="og:title" content="Weak convergence of oscilating functions" />
+<meta property="twitter:title" content="Weak convergence of oscilating functions" />
+
+
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Weak convergence of oscilating functions" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Weak convergence of oscillating functions Uniform integrability, Equi-integrability and Dunford-Pettis Theorem Weak convergence of oscillating functions Let $g\in L^\infty(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then \[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\] In what follows we write the integral means Lebesgue integral, and note that it coincides with Riemann integral if the set of discontinuous points of a function is of measure zero, for example $f$ is continuous. For any $\varepsilon&gt;0$ there is $\delta&gt;0$ such that $\vert| x-y \vert|&lt;\delta$ implies $\vert|f(x)-f(x)\vert|&lt;\varepsilon$ as $f$ is uniformly continuous on $[0,1]$. We write \[\int_0^1 f(x)g(nx)\;dx = \sum_{i=0}^{n-1} \int_{\frac{i}{n}}^{\frac{i+1}{n}} f(x)g(nx)dx = \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy.\] We observe that, for $n$ large enough then \[\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right| &lt; \varepsilon \qquad\text{for}\qquad y\in [i,i+1].\] Let $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$ then \[\left\vert \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right\vert \leq C\varepsilon\] and thus \[\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \left[\frac{1}{n}\sum_{i=0}^{n-1} f\left(\frac{i}{n}\right)\right] \int_{0}^{1} g(y)dy\right| \leq C\varepsilon\] using the fact that $g$ is periodic with period $1$. Passing $n\to \infty$ and using the convergence of the Riemann sum for $f$, then letting $\varepsilon\to 0$ we obtain the result. Remark. We note that a bounded periodic function does not neccessarily Riemann integrable (the Dirichlet function for example). Nevertheless, the above integral could be understood in the sense of Lebesgue integral and the result holds. The assumption $f\in L^\infty(\mathbb{R})$ can be relaxed to $f\in L^1_{\text{loc}}(\mathbb{R})$ with $f\in L^1([0,1])$. (relaxed assumption) Let $g\in L^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then \[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\] The only difference in the proof is instead of using the estimate $\Vert g\Vert_{L^\infty([0,1])}\leq C$, we use \[C = \int_{[0,1]} |g(x)|dx.\] Then we have \[\begin{aligned} &amp;\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right| \\ &amp;\qquad \qquad \leq \frac{1}{n}\sum_{i=0}^{n-1}\int_i^{i+1}\left(\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right||g(y)|\right)dy\\ &amp;\qquad \qquad \leq \frac{\varepsilon}{n}\sum_{i=0}^{n-1}\left(\int_i^{i+1}|g(y)|dy\right) = \varepsilon\Vert g\Vert_{L^1([0,1])} \end{aligned}\] and the rest of the proof is similar. As a consequence, we have the following result on weak convergence for $1&lt;p &lt; \infty$ and weak$^*$ convergence in $L^\infty$. (weak convergence) Let $g\in \mathrm{L}^\infty(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$. (a) $g_n \rightharpoonup g_0$ weakly in $L^p([0,1])$ for $1&lt; p&lt;\infty$. (b) $g_n \rightharpoonup g_0$ weak$^*$ in $L^\infty([0,1])$. The dual space of $L^1(I)$ is $L^\infty(I)$, i.e., \(\big(L^1(I)\big)^* = L^\infty(I).\) For part (a), we observe that if $1&lt; p&lt; \infty$ then $\mathrm{C}_c^\infty([0,1])$ is dense in $L^p([0,1])$. Take a test function $\phi \in L^q([0,1])$ where $p^{-1}+q^{-1}=1$, we aim to show that $ \lim_{n\to \infty} \langle \phi, g_n\rangle = \langle \phi, g\rangle$. For $\varepsilon&gt;0$ we can find $\phi_\varepsilon\in \mathrm{C}^\infty_c([0,1])$ such that $\Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])} &lt;\varepsilon$, then by Holder’s inequality \[\left|\int_0^1 \phi(x)g_n(x)\;dx - \int_0^1 \phi_\varepsilon(x)g_n(x)\;dx\right| \leq \Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])} \Vert g_n\Vert_{L^p([0,1])} \leq C\varepsilon\] where $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$. Now take $n\to\infty$ using Theorem 2 with $\phi_\varepsilon$ is continuous we obtain \[\left| \lim_{n\to \infty}\int_0^1 \phi(x)g_n(x)\;dx - \left(\int_0^1 \phi_\varepsilon(x)dx\right) \left( \int_0^1 g(x)\;dx\right) \right| \leq C\varepsilon.\] Since $\Vert \phi_\varepsilon - \phi \Vert_{L^1([0,1])} \leq \Vert \phi_\varepsilon - \phi \Vert_{L^q([0,1])} &lt; \varepsilon$ as $1\leq q$, sending $\varepsilon\to 0$ we obtain the conclusion. For part (b), the proof is basically the same, but we only consider test function $\phi\in L^1([0,1])$, which still satisfies that $\mathrm{C}_c^\infty([0,1])$ is dense in $L^1([0,1])$. Remark. Theorems Theorem 2 and Theorem 3 are some forms of ergodic property. Here we have used the density of continuous functions in the respective dual spaces. Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces.s The assumption $g\in L^\infty(\mathbb{R})$ can be replaced by $g\in L^p_{\text{loc}}(\mathbb{R})$ for a specific $p \in (0,\infty)$, and the conclusion becomes the weak convergence in $L^p([0,1])$ for that specific $p$. When $p=1$, the techinque we use in the above theorems do not work as $\mathrm{C}^\infty_c([0,1])$ is not dense in $L^\infty([0,1]) = (L^1([0,1))^*$. However if we have an extra assumption then inclusion implies weak convergence in $L^1([0,1])$ as follows. Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$ and $g\in L^p([0,1])$ for some $1&lt;p&lt;\infty$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$, then $ g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$, i.e., \[\lim_{n\to \infty} \int_0^1 g_n(x)\phi(x)dx = \lim_{n\to \infty} \int_0^1 g_0(x)\phi(x)dx \qquad \text{for all}\;\phi\in L^\infty([0,1]).\] The fact that $g\in L^p([0,1])$ for $p&gt;1$ implies $g\in L^1([0,1])$ as well. Take $\phi\in L^\infty([0,1])$, we need to show $\langle g_n,\phi \rangle \to \langle g, \phi\rangle$ as $n\to \infty$. Since $g\in L^p([0,1])$, we see that $g_n \in L^p([0,1])$ as well and \[\Vert g_n\Vert_{L^p}([0,1]) = \Vert g\Vert_{L^p}([0,1]), \qquad n = 1,2,3,\ldots\] Therefore, take $q \in (0,\infty)$ such that $p^{-1} + q^{-1} = 1$, we can apply Theorem 3 to obtain $g_n\rightharpoonup g$ in $L^p([0,1])$. As $\phi\in L^q([0,1])$ we deduce that \[\lim_{n\to \infty}\int_0^1 \phi(x)\big(g_n(x) - g(x)\big)dx = 0.\] In general, we can remove this extra assumption $g\in L^p([0,1])$ for some $p&gt;1$ by using the Dunford-Pettis Theorem given belows (Dunford-Pettis Theorem). (weak convergence) Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$. (c) $g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$. To apply Dunford-Petties theorem, it is clear that $\Vert g_n\Vert_{L^1([0,1])} = \Vert g\Vert_{L^1([0,1])}$ for all $n$, thus it is uniformly bounded in $L^1([0,1])$ already. We only need to show that it is equi-integrable. Since tightness is trivial due to $[0,1]$ being a compact (finite) set, we only need to show that $(g_n)$ is uniformly integrable, which is a consequence of the following fact \[\lim_{M\to \infty}\left( \sup_n \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx\right) = 0.\] By direct computation, we have \[\begin{aligned} \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx = \int_0^1 |g(z)|\cdot \mathbb{1}_{\{z\in [0,1]: |g(z)|\geq M\}}(z)\;dz \to 0 \end{aligned}\] uniformly as $M\to \infty$ since \[|\{z\in [0,1]: |g(z)|\geq M\}| \leq \frac{1}{M}\int_0^1 |g(z)|dz \to 0\] uniformly as $M\to \infty$. The uniform integrability of $(g_n)$ can be deduced from \[\begin{aligned} \int_E |g_n(x)|dx &amp;= \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + \int_{E\cap \{|g_n|&lt;M\}} |g_n(x)|dx\\ &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + M|E| \\ &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + M\delta. \end{aligned}\] Choose $\delta = (2M)^{-1}\varepsilon$ and we can choose $M$ large so that the right hand side is less than $\varepsilon$. Uniform integrability, Equi-integrability and Dunford-Pettis Theorem Before stating Dunford-Pettis Theorem, we state some definitions. (Equi-integrability). For $\Omega\subset \mathbb{R}^n$, a family of integrable functions $\mathcal{U}\subset L^1(\Omega)$ is equi-integrable if the following two conditions hold (Tight) The set $\mathcal{U}$ is tight, i.e., for every $\varepsilon&gt;0$ there exists a measurable set $A$ with finite measure such that (trivially true if $\Omega$ is of finite measure) \[\sup_{u\in \mathcal{U}} \int_{\Omega - A} |u(x)|dx &lt; \varepsilon.\] (Uniform integrable) For every $\varepsilon &gt; 0$ there exists $\delta &gt; 0$ such that if $E$ is a measurable set with $\vert E\vert &lt; \delta$ then \[\sup_{u\in \mathcal{U}} \int_E |u(x)|dx &lt; \varepsilon.\] Now we state the Dunford-Pettis theorem that characterizes weak convergence in $\sigma(L^1,L^\infty)$. Dunford-Pettis Theorem. For $\Omega\subset \mathbb{R}^n$, a sequence $(u_n)\subset L^1(\Omega)$ is convergent weakly in $\sigma(L^1,L^\infty)$ if and only if The sequence $(u_n)$ is equi-integrable. The sequence $(u_n)$ is uniformly bounded in $L^1$, i.e., $\sup_n \Vert u_n\Vert_{L^1(\Omega)} \leq C$. Remarks and Todos.   Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces." />
+<meta property="og:description" content="Weak convergence of oscillating functions Uniform integrability, Equi-integrability and Dunford-Pettis Theorem Weak convergence of oscillating functions Let $g\in L^\infty(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then \[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\] In what follows we write the integral means Lebesgue integral, and note that it coincides with Riemann integral if the set of discontinuous points of a function is of measure zero, for example $f$ is continuous. For any $\varepsilon&gt;0$ there is $\delta&gt;0$ such that $\vert| x-y \vert|&lt;\delta$ implies $\vert|f(x)-f(x)\vert|&lt;\varepsilon$ as $f$ is uniformly continuous on $[0,1]$. We write \[\int_0^1 f(x)g(nx)\;dx = \sum_{i=0}^{n-1} \int_{\frac{i}{n}}^{\frac{i+1}{n}} f(x)g(nx)dx = \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy.\] We observe that, for $n$ large enough then \[\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right| &lt; \varepsilon \qquad\text{for}\qquad y\in [i,i+1].\] Let $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$ then \[\left\vert \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right\vert \leq C\varepsilon\] and thus \[\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \left[\frac{1}{n}\sum_{i=0}^{n-1} f\left(\frac{i}{n}\right)\right] \int_{0}^{1} g(y)dy\right| \leq C\varepsilon\] using the fact that $g$ is periodic with period $1$. Passing $n\to \infty$ and using the convergence of the Riemann sum for $f$, then letting $\varepsilon\to 0$ we obtain the result. Remark. We note that a bounded periodic function does not neccessarily Riemann integrable (the Dirichlet function for example). Nevertheless, the above integral could be understood in the sense of Lebesgue integral and the result holds. The assumption $f\in L^\infty(\mathbb{R})$ can be relaxed to $f\in L^1_{\text{loc}}(\mathbb{R})$ with $f\in L^1([0,1])$. (relaxed assumption) Let $g\in L^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then \[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\] The only difference in the proof is instead of using the estimate $\Vert g\Vert_{L^\infty([0,1])}\leq C$, we use \[C = \int_{[0,1]} |g(x)|dx.\] Then we have \[\begin{aligned} &amp;\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right| \\ &amp;\qquad \qquad \leq \frac{1}{n}\sum_{i=0}^{n-1}\int_i^{i+1}\left(\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right||g(y)|\right)dy\\ &amp;\qquad \qquad \leq \frac{\varepsilon}{n}\sum_{i=0}^{n-1}\left(\int_i^{i+1}|g(y)|dy\right) = \varepsilon\Vert g\Vert_{L^1([0,1])} \end{aligned}\] and the rest of the proof is similar. As a consequence, we have the following result on weak convergence for $1&lt;p &lt; \infty$ and weak$^*$ convergence in $L^\infty$. (weak convergence) Let $g\in \mathrm{L}^\infty(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$. (a) $g_n \rightharpoonup g_0$ weakly in $L^p([0,1])$ for $1&lt; p&lt;\infty$. (b) $g_n \rightharpoonup g_0$ weak$^*$ in $L^\infty([0,1])$. The dual space of $L^1(I)$ is $L^\infty(I)$, i.e., \(\big(L^1(I)\big)^* = L^\infty(I).\) For part (a), we observe that if $1&lt; p&lt; \infty$ then $\mathrm{C}_c^\infty([0,1])$ is dense in $L^p([0,1])$. Take a test function $\phi \in L^q([0,1])$ where $p^{-1}+q^{-1}=1$, we aim to show that $ \lim_{n\to \infty} \langle \phi, g_n\rangle = \langle \phi, g\rangle$. For $\varepsilon&gt;0$ we can find $\phi_\varepsilon\in \mathrm{C}^\infty_c([0,1])$ such that $\Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])} &lt;\varepsilon$, then by Holder’s inequality \[\left|\int_0^1 \phi(x)g_n(x)\;dx - \int_0^1 \phi_\varepsilon(x)g_n(x)\;dx\right| \leq \Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])} \Vert g_n\Vert_{L^p([0,1])} \leq C\varepsilon\] where $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$. Now take $n\to\infty$ using Theorem 2 with $\phi_\varepsilon$ is continuous we obtain \[\left| \lim_{n\to \infty}\int_0^1 \phi(x)g_n(x)\;dx - \left(\int_0^1 \phi_\varepsilon(x)dx\right) \left( \int_0^1 g(x)\;dx\right) \right| \leq C\varepsilon.\] Since $\Vert \phi_\varepsilon - \phi \Vert_{L^1([0,1])} \leq \Vert \phi_\varepsilon - \phi \Vert_{L^q([0,1])} &lt; \varepsilon$ as $1\leq q$, sending $\varepsilon\to 0$ we obtain the conclusion. For part (b), the proof is basically the same, but we only consider test function $\phi\in L^1([0,1])$, which still satisfies that $\mathrm{C}_c^\infty([0,1])$ is dense in $L^1([0,1])$. Remark. Theorems Theorem 2 and Theorem 3 are some forms of ergodic property. Here we have used the density of continuous functions in the respective dual spaces. Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces.s The assumption $g\in L^\infty(\mathbb{R})$ can be replaced by $g\in L^p_{\text{loc}}(\mathbb{R})$ for a specific $p \in (0,\infty)$, and the conclusion becomes the weak convergence in $L^p([0,1])$ for that specific $p$. When $p=1$, the techinque we use in the above theorems do not work as $\mathrm{C}^\infty_c([0,1])$ is not dense in $L^\infty([0,1]) = (L^1([0,1))^*$. However if we have an extra assumption then inclusion implies weak convergence in $L^1([0,1])$ as follows. Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$ and $g\in L^p([0,1])$ for some $1&lt;p&lt;\infty$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$, then $ g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$, i.e., \[\lim_{n\to \infty} \int_0^1 g_n(x)\phi(x)dx = \lim_{n\to \infty} \int_0^1 g_0(x)\phi(x)dx \qquad \text{for all}\;\phi\in L^\infty([0,1]).\] The fact that $g\in L^p([0,1])$ for $p&gt;1$ implies $g\in L^1([0,1])$ as well. Take $\phi\in L^\infty([0,1])$, we need to show $\langle g_n,\phi \rangle \to \langle g, \phi\rangle$ as $n\to \infty$. Since $g\in L^p([0,1])$, we see that $g_n \in L^p([0,1])$ as well and \[\Vert g_n\Vert_{L^p}([0,1]) = \Vert g\Vert_{L^p}([0,1]), \qquad n = 1,2,3,\ldots\] Therefore, take $q \in (0,\infty)$ such that $p^{-1} + q^{-1} = 1$, we can apply Theorem 3 to obtain $g_n\rightharpoonup g$ in $L^p([0,1])$. As $\phi\in L^q([0,1])$ we deduce that \[\lim_{n\to \infty}\int_0^1 \phi(x)\big(g_n(x) - g(x)\big)dx = 0.\] In general, we can remove this extra assumption $g\in L^p([0,1])$ for some $p&gt;1$ by using the Dunford-Pettis Theorem given belows (Dunford-Pettis Theorem). (weak convergence) Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$. (c) $g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$. To apply Dunford-Petties theorem, it is clear that $\Vert g_n\Vert_{L^1([0,1])} = \Vert g\Vert_{L^1([0,1])}$ for all $n$, thus it is uniformly bounded in $L^1([0,1])$ already. We only need to show that it is equi-integrable. Since tightness is trivial due to $[0,1]$ being a compact (finite) set, we only need to show that $(g_n)$ is uniformly integrable, which is a consequence of the following fact \[\lim_{M\to \infty}\left( \sup_n \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx\right) = 0.\] By direct computation, we have \[\begin{aligned} \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx = \int_0^1 |g(z)|\cdot \mathbb{1}_{\{z\in [0,1]: |g(z)|\geq M\}}(z)\;dz \to 0 \end{aligned}\] uniformly as $M\to \infty$ since \[|\{z\in [0,1]: |g(z)|\geq M\}| \leq \frac{1}{M}\int_0^1 |g(z)|dz \to 0\] uniformly as $M\to \infty$. The uniform integrability of $(g_n)$ can be deduced from \[\begin{aligned} \int_E |g_n(x)|dx &amp;= \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + \int_{E\cap \{|g_n|&lt;M\}} |g_n(x)|dx\\ &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + M|E| \\ &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + M\delta. \end{aligned}\] Choose $\delta = (2M)^{-1}\varepsilon$ and we can choose $M$ large so that the right hand side is less than $\varepsilon$. Uniform integrability, Equi-integrability and Dunford-Pettis Theorem Before stating Dunford-Pettis Theorem, we state some definitions. (Equi-integrability). For $\Omega\subset \mathbb{R}^n$, a family of integrable functions $\mathcal{U}\subset L^1(\Omega)$ is equi-integrable if the following two conditions hold (Tight) The set $\mathcal{U}$ is tight, i.e., for every $\varepsilon&gt;0$ there exists a measurable set $A$ with finite measure such that (trivially true if $\Omega$ is of finite measure) \[\sup_{u\in \mathcal{U}} \int_{\Omega - A} |u(x)|dx &lt; \varepsilon.\] (Uniform integrable) For every $\varepsilon &gt; 0$ there exists $\delta &gt; 0$ such that if $E$ is a measurable set with $\vert E\vert &lt; \delta$ then \[\sup_{u\in \mathcal{U}} \int_E |u(x)|dx &lt; \varepsilon.\] Now we state the Dunford-Pettis theorem that characterizes weak convergence in $\sigma(L^1,L^\infty)$. Dunford-Pettis Theorem. For $\Omega\subset \mathbb{R}^n$, a sequence $(u_n)\subset L^1(\Omega)$ is convergent weakly in $\sigma(L^1,L^\infty)$ if and only if The sequence $(u_n)$ is equi-integrable. The sequence $(u_n)$ is uniformly bounded in $L^1$, i.e., $\sup_n \Vert u_n\Vert_{L^1(\Omega)} \leq C$. Remarks and Todos.   Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces." />
+<link rel="canonical" href="http://localhost:4000/blogging/writing/2018/06/15/periodic-limit.html" />
+<meta property="og:url" content="http://localhost:4000/blogging/writing/2018/06/15/periodic-limit.html" />
+<meta property="og:site_name" content="The Timeline" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-15T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Weak convergence of oscilating functions" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2018-06-15T00:00:00-04:00","datePublished":"2018-06-15T00:00:00-04:00","description":"Weak convergence of oscillating functions Uniform integrability, Equi-integrability and Dunford-Pettis Theorem Weak convergence of oscillating functions Let $g\\in L^\\infty(\\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\\to \\mathbb{R}$ be a continuous function, then \\[\\lim_{n\\to \\infty} \\int_0^1 f(x)g(nx)\\;dx = \\left(\\int_0^1 f(x)dx\\right)\\left(\\int_0^1 g(x)dx\\right).\\] In what follows we write the integral means Lebesgue integral, and note that it coincides with Riemann integral if the set of discontinuous points of a function is of measure zero, for example $f$ is continuous. For any $\\varepsilon&gt;0$ there is $\\delta&gt;0$ such that $\\vert| x-y \\vert|&lt;\\delta$ implies $\\vert|f(x)-f(x)\\vert|&lt;\\varepsilon$ as $f$ is uniformly continuous on $[0,1]$. We write \\[\\int_0^1 f(x)g(nx)\\;dx = \\sum_{i=0}^{n-1} \\int_{\\frac{i}{n}}^{\\frac{i+1}{n}} f(x)g(nx)dx = \\frac{1}{n}\\sum_{i=0}^{n-1} \\int_{i}^{i+1} f\\left(\\frac{y}{n}\\right)g(y)dy.\\] We observe that, for $n$ large enough then \\[\\left|f\\bigg(\\frac{y}{n}\\bigg) - f\\left(\\frac{i}{n}\\right)\\right| &lt; \\varepsilon \\qquad\\text{for}\\qquad y\\in [i,i+1].\\] Let $C = \\Vert g\\Vert_{L^\\infty(\\mathbb{R})}$ then \\[\\left\\vert \\frac{1}{n}\\sum_{i=0}^{n-1} \\int_{i}^{i+1} f\\left(\\frac{y}{n}\\right)g(y)dy - \\frac{1}{n}\\sum_{i=0}^{n-1} \\int_{i}^{i+1} f\\left(\\frac{i}{n}\\right)g(y)dy\\right\\vert \\leq C\\varepsilon\\] and thus \\[\\left|\\frac{1}{n}\\sum_{i=0}^{n-1} \\int_{i}^{i+1} f\\left(\\frac{y}{n}\\right)g(y)dy - \\left[\\frac{1}{n}\\sum_{i=0}^{n-1} f\\left(\\frac{i}{n}\\right)\\right] \\int_{0}^{1} g(y)dy\\right| \\leq C\\varepsilon\\] using the fact that $g$ is periodic with period $1$. Passing $n\\to \\infty$ and using the convergence of the Riemann sum for $f$, then letting $\\varepsilon\\to 0$ we obtain the result. Remark. We note that a bounded periodic function does not neccessarily Riemann integrable (the Dirichlet function for example). Nevertheless, the above integral could be understood in the sense of Lebesgue integral and the result holds. The assumption $f\\in L^\\infty(\\mathbb{R})$ can be relaxed to $f\\in L^1_{\\text{loc}}(\\mathbb{R})$ with $f\\in L^1([0,1])$. (relaxed assumption) Let $g\\in L^1_{\\text{loc}}(\\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\\to \\mathbb{R}$ be a continuous function, then \\[\\lim_{n\\to \\infty} \\int_0^1 f(x)g(nx)\\;dx = \\left(\\int_0^1 f(x)dx\\right)\\left(\\int_0^1 g(x)dx\\right).\\] The only difference in the proof is instead of using the estimate $\\Vert g\\Vert_{L^\\infty([0,1])}\\leq C$, we use \\[C = \\int_{[0,1]} |g(x)|dx.\\] Then we have \\[\\begin{aligned} &amp;\\left|\\frac{1}{n}\\sum_{i=0}^{n-1} \\int_{i}^{i+1} f\\left(\\frac{y}{n}\\right)g(y)dy - \\frac{1}{n}\\sum_{i=0}^{n-1} \\int_{i}^{i+1} f\\left(\\frac{i}{n}\\right)g(y)dy\\right| \\\\ &amp;\\qquad \\qquad \\leq \\frac{1}{n}\\sum_{i=0}^{n-1}\\int_i^{i+1}\\left(\\left|f\\bigg(\\frac{y}{n}\\bigg) - f\\left(\\frac{i}{n}\\right)\\right||g(y)|\\right)dy\\\\ &amp;\\qquad \\qquad \\leq \\frac{\\varepsilon}{n}\\sum_{i=0}^{n-1}\\left(\\int_i^{i+1}|g(y)|dy\\right) = \\varepsilon\\Vert g\\Vert_{L^1([0,1])} \\end{aligned}\\] and the rest of the proof is similar. As a consequence, we have the following result on weak convergence for $1&lt;p &lt; \\infty$ and weak$^*$ convergence in $L^\\infty$. (weak convergence) Let $g\\in \\mathrm{L}^\\infty(\\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\\in \\mathbb{N}$ and $g_0(x)\\equiv \\int_0^1 g(x)dx$. (a) $g_n \\rightharpoonup g_0$ weakly in $L^p([0,1])$ for $1&lt; p&lt;\\infty$. (b) $g_n \\rightharpoonup g_0$ weak$^*$ in $L^\\infty([0,1])$. The dual space of $L^1(I)$ is $L^\\infty(I)$, i.e., \\(\\big(L^1(I)\\big)^* = L^\\infty(I).\\) For part (a), we observe that if $1&lt; p&lt; \\infty$ then $\\mathrm{C}_c^\\infty([0,1])$ is dense in $L^p([0,1])$. Take a test function $\\phi \\in L^q([0,1])$ where $p^{-1}+q^{-1}=1$, we aim to show that $ \\lim_{n\\to \\infty} \\langle \\phi, g_n\\rangle = \\langle \\phi, g\\rangle$. For $\\varepsilon&gt;0$ we can find $\\phi_\\varepsilon\\in \\mathrm{C}^\\infty_c([0,1])$ such that $\\Vert \\phi_\\varepsilon-\\phi \\Vert_{L^q([0,1])} &lt;\\varepsilon$, then by Holder’s inequality \\[\\left|\\int_0^1 \\phi(x)g_n(x)\\;dx - \\int_0^1 \\phi_\\varepsilon(x)g_n(x)\\;dx\\right| \\leq \\Vert \\phi_\\varepsilon-\\phi \\Vert_{L^q([0,1])} \\Vert g_n\\Vert_{L^p([0,1])} \\leq C\\varepsilon\\] where $C = \\Vert g\\Vert_{L^\\infty(\\mathbb{R})}$. Now take $n\\to\\infty$ using Theorem 2 with $\\phi_\\varepsilon$ is continuous we obtain \\[\\left| \\lim_{n\\to \\infty}\\int_0^1 \\phi(x)g_n(x)\\;dx - \\left(\\int_0^1 \\phi_\\varepsilon(x)dx\\right) \\left( \\int_0^1 g(x)\\;dx\\right) \\right| \\leq C\\varepsilon.\\] Since $\\Vert \\phi_\\varepsilon - \\phi \\Vert_{L^1([0,1])} \\leq \\Vert \\phi_\\varepsilon - \\phi \\Vert_{L^q([0,1])} &lt; \\varepsilon$ as $1\\leq q$, sending $\\varepsilon\\to 0$ we obtain the conclusion. For part (b), the proof is basically the same, but we only consider test function $\\phi\\in L^1([0,1])$, which still satisfies that $\\mathrm{C}_c^\\infty([0,1])$ is dense in $L^1([0,1])$. Remark. Theorems Theorem 2 and Theorem 3 are some forms of ergodic property. Here we have used the density of continuous functions in the respective dual spaces. Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces.s The assumption $g\\in L^\\infty(\\mathbb{R})$ can be replaced by $g\\in L^p_{\\text{loc}}(\\mathbb{R})$ for a specific $p \\in (0,\\infty)$, and the conclusion becomes the weak convergence in $L^p([0,1])$ for that specific $p$. When $p=1$, the techinque we use in the above theorems do not work as $\\mathrm{C}^\\infty_c([0,1])$ is not dense in $L^\\infty([0,1]) = (L^1([0,1))^*$. However if we have an extra assumption then inclusion implies weak convergence in $L^1([0,1])$ as follows. Let $g\\in \\mathrm{L}^1_{\\text{loc}}(\\mathbb{R})$ be a periodic function with period $1$ and $g\\in L^p([0,1])$ for some $1&lt;p&lt;\\infty$. Let $g_n(x) = g(nx)$ for $n\\in \\mathbb{N}$ and $g_0(x)\\equiv \\int_0^1 g(x)dx$, then $ g_n \\rightharpoonup g_0$ weakly in $L^1([0,1])$, i.e., \\[\\lim_{n\\to \\infty} \\int_0^1 g_n(x)\\phi(x)dx = \\lim_{n\\to \\infty} \\int_0^1 g_0(x)\\phi(x)dx \\qquad \\text{for all}\\;\\phi\\in L^\\infty([0,1]).\\] The fact that $g\\in L^p([0,1])$ for $p&gt;1$ implies $g\\in L^1([0,1])$ as well. Take $\\phi\\in L^\\infty([0,1])$, we need to show $\\langle g_n,\\phi \\rangle \\to \\langle g, \\phi\\rangle$ as $n\\to \\infty$. Since $g\\in L^p([0,1])$, we see that $g_n \\in L^p([0,1])$ as well and \\[\\Vert g_n\\Vert_{L^p}([0,1]) = \\Vert g\\Vert_{L^p}([0,1]), \\qquad n = 1,2,3,\\ldots\\] Therefore, take $q \\in (0,\\infty)$ such that $p^{-1} + q^{-1} = 1$, we can apply Theorem 3 to obtain $g_n\\rightharpoonup g$ in $L^p([0,1])$. As $\\phi\\in L^q([0,1])$ we deduce that \\[\\lim_{n\\to \\infty}\\int_0^1 \\phi(x)\\big(g_n(x) - g(x)\\big)dx = 0.\\] In general, we can remove this extra assumption $g\\in L^p([0,1])$ for some $p&gt;1$ by using the Dunford-Pettis Theorem given belows (Dunford-Pettis Theorem). (weak convergence) Let $g\\in \\mathrm{L}^1_{\\text{loc}}(\\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\\in \\mathbb{N}$ and $g_0(x)\\equiv \\int_0^1 g(x)dx$. (c) $g_n \\rightharpoonup g_0$ weakly in $L^1([0,1])$. To apply Dunford-Petties theorem, it is clear that $\\Vert g_n\\Vert_{L^1([0,1])} = \\Vert g\\Vert_{L^1([0,1])}$ for all $n$, thus it is uniformly bounded in $L^1([0,1])$ already. We only need to show that it is equi-integrable. Since tightness is trivial due to $[0,1]$ being a compact (finite) set, we only need to show that $(g_n)$ is uniformly integrable, which is a consequence of the following fact \\[\\lim_{M\\to \\infty}\\left( \\sup_n \\int_{[0,1]} |g_n(x)|\\cdot \\mathbb{1}_{\\{x\\in [0,1]: |g_n(x)|\\geq M\\}}(x)\\;dx\\right) = 0.\\] By direct computation, we have \\[\\begin{aligned} \\int_{[0,1]} |g_n(x)|\\cdot \\mathbb{1}_{\\{x\\in [0,1]: |g_n(x)|\\geq M\\}}(x)\\;dx = \\int_0^1 |g(z)|\\cdot \\mathbb{1}_{\\{z\\in [0,1]: |g(z)|\\geq M\\}}(z)\\;dz \\to 0 \\end{aligned}\\] uniformly as $M\\to \\infty$ since \\[|\\{z\\in [0,1]: |g(z)|\\geq M\\}| \\leq \\frac{1}{M}\\int_0^1 |g(z)|dz \\to 0\\] uniformly as $M\\to \\infty$. The uniform integrability of $(g_n)$ can be deduced from \\[\\begin{aligned} \\int_E |g_n(x)|dx &amp;= \\int_{E\\cap \\{|g_n|\\geq M\\}} |g_n(x)|dx + \\int_{E\\cap \\{|g_n|&lt;M\\}} |g_n(x)|dx\\\\ &amp;\\leq \\int_{E\\cap \\{|g_n|\\geq M\\}} |g_n(x)|dx + M|E| \\\\ &amp;\\leq \\int_{E\\cap \\{|g_n|\\geq M\\}} |g_n(x)|dx + M\\delta. \\end{aligned}\\] Choose $\\delta = (2M)^{-1}\\varepsilon$ and we can choose $M$ large so that the right hand side is less than $\\varepsilon$. Uniform integrability, Equi-integrability and Dunford-Pettis Theorem Before stating Dunford-Pettis Theorem, we state some definitions. (Equi-integrability). For $\\Omega\\subset \\mathbb{R}^n$, a family of integrable functions $\\mathcal{U}\\subset L^1(\\Omega)$ is equi-integrable if the following two conditions hold (Tight) The set $\\mathcal{U}$ is tight, i.e., for every $\\varepsilon&gt;0$ there exists a measurable set $A$ with finite measure such that (trivially true if $\\Omega$ is of finite measure) \\[\\sup_{u\\in \\mathcal{U}} \\int_{\\Omega - A} |u(x)|dx &lt; \\varepsilon.\\] (Uniform integrable) For every $\\varepsilon &gt; 0$ there exists $\\delta &gt; 0$ such that if $E$ is a measurable set with $\\vert E\\vert &lt; \\delta$ then \\[\\sup_{u\\in \\mathcal{U}} \\int_E |u(x)|dx &lt; \\varepsilon.\\] Now we state the Dunford-Pettis theorem that characterizes weak convergence in $\\sigma(L^1,L^\\infty)$. Dunford-Pettis Theorem. For $\\Omega\\subset \\mathbb{R}^n$, a sequence $(u_n)\\subset L^1(\\Omega)$ is convergent weakly in $\\sigma(L^1,L^\\infty)$ if and only if The sequence $(u_n)$ is equi-integrable. The sequence $(u_n)$ is uniformly bounded in $L^1$, i.e., $\\sup_n \\Vert u_n\\Vert_{L^1(\\Omega)} \\leq C$. Remarks and Todos.   Another way of proving Theorem 2 and Theorem 3 is using the density of characteristic functions of intervals in the respective dual spaces.","headline":"Weak convergence of oscilating functions","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blogging/writing/2018/06/15/periodic-limit.html"},"url":"http://localhost:4000/blogging/writing/2018/06/15/periodic-limit.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+    <title>Weak convergence of oscilating functions&#32;&#45;&#32;Personal Timeline&#32;&#45;&#32;The Timeline</title>
+    
+
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/image/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/image/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/image/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/image/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/image/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/image/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/image/favicon-192x192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/image/favicon-144x144.png">
+    <meta name="msapplication-config" content="/assets/image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="alternate" type="application/rss+xml" title="The Timeline - Personal Timeline" href="/feed.xml"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.5/plyr.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css"/>
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <!-- <a href="/" class="site-avatar"><img src="http://localhost:4000/assets/image/tntmath-big.jpeg" width="70" height="70" /></a> -->
+          <!-- Fix -serving with a python server -->
+          <a href="/" class="site-avatar"><img src="/assets/image/tntmath-big.jpeg" width="70" height="70" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">The Timeline</a></h1>
+            <p class="site-description">Personal Timeline</p>
+          </div>
+
+          <nav class="nav-menu">
+            
+  <a class="nav-menu-item" href="http://localhost:4000/">Blog</a>
+
+  <a class="nav-menu-item" href="http://localhost:4000/about">About</a>
+
+  <a class="nav-menu-item" href="http://localhost:4000/archive">Archive</a>
+
+  <a class="nav-menu-item" href="http://localhost:4000/search">Search</a>
+
+
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <div class='front-matter'>
+    <h1>Weak convergence of oscilating functions</h1>
+    <p>Some weak convergence results of periodic functions in one dimension</p>
+    <div class="date">
+      <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;June 15, 2018</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <ul>
+  <li><a href="#weak-convergence-of-oscillating-functions">Weak convergence of oscillating functions</a></li>
+  <li><a href="#uniform-integrability-equi-integrability-and-dunford-pettis-theorem">Uniform integrability, Equi-integrability and Dunford-Pettis Theorem</a></li>
+</ul>
+
+<h3 id="weak-convergence-of-oscillating-functions">Weak convergence of oscillating functions</h3>
+
+<div class="theorem">
+<p>Let $g\in L^\infty(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then</p>
+
+\[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\]
+
+</div>
+
+<div class="Proof">
+<p>In what follows we write the integral means Lebesgue integral, and note that it coincides with Riemann integral if the set of discontinuous points of a function is of measure zero, for example $f$ is continuous.</p>
+
+<p>For any $\varepsilon&gt;0$ there is $\delta&gt;0$ such that 
+$\vert| x-y \vert|&lt;\delta$ implies $\vert|f(x)-f(x)\vert|&lt;\varepsilon$ as $f$ is uniformly continuous on $[0,1]$. We write</p>
+
+\[\int_0^1 f(x)g(nx)\;dx 
+        = \sum_{i=0}^{n-1} \int_{\frac{i}{n}}^{\frac{i+1}{n}} f(x)g(nx)dx 
+        = \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy.\]
+
+<p>We observe that, for $n$ large enough then</p>
+
+\[\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right| &lt; \varepsilon \qquad\text{for}\qquad y\in [i,i+1].\]
+
+<p>Let $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$ then</p>
+
+\[\left\vert \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right\vert \leq C\varepsilon\]
+
+<p>and thus</p>
+
+\[\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{y}{n}\right)g(y)dy - \left[\frac{1}{n}\sum_{i=0}^{n-1} f\left(\frac{i}{n}\right)\right] \int_{0}^{1} g(y)dy\right| \leq C\varepsilon\]
+
+<p>using the fact that $g$ is periodic with period $1$. Passing $n\to \infty$ and using the convergence of the Riemann sum for $f$, then letting $\varepsilon\to 0$ we obtain the result.</p>
+
+</div>
+
+<p><strong>Remark.</strong> <em>We note that a bounded periodic function does not neccessarily Riemann integrable (the Dirichlet function for example). Nevertheless, the above integral could be understood in the sense of Lebesgue integral and the result holds.</em></p>
+
+<p>The assumption $f\in L^\infty(\mathbb{R})$ can be relaxed to $f\in L^1_{\text{loc}}(\mathbb{R})$ with $f\in L^1([0,1])$.</p>
+
+<div class="theorem">
+<p><a name="thm2"> (relaxed assumption) </a></p>
+
+<p>Let $g\in L^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$, $f:[0,1]\to \mathbb{R}$ be a continuous function, then</p>
+
+\[\lim_{n\to \infty} \int_0^1 f(x)g(nx)\;dx = \left(\int_0^1 f(x)dx\right)\left(\int_0^1 g(x)dx\right).\]
+
+</div>
+
+<div class="Proof">
+<p>The only difference in the proof is instead of using the estimate $\Vert g\Vert_{L^\infty([0,1])}\leq C$, we use</p>
+
+\[C = \int_{[0,1]} |g(x)|dx.\]
+
+<p>Then we have</p>
+
+\[\begin{aligned}       
+    &amp;\left|\frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1}   f\left(\frac{y}{n}\right)g(y)dy - \frac{1}{n}\sum_{i=0}^{n-1} \int_{i}^{i+1} f\left(\frac{i}{n}\right)g(y)dy\right| \\        
+    &amp;\qquad \qquad \leq \frac{1}{n}\sum_{i=0}^{n-1}\int_i^{i+1}\left(\left|f\bigg(\frac{y}{n}\bigg) - f\left(\frac{i}{n}\right)\right||g(y)|\right)dy\\        
+    &amp;\qquad \qquad \leq \frac{\varepsilon}{n}\sum_{i=0}^{n-1}\left(\int_i^{i+1}|g(y)|dy\right) = \varepsilon\Vert g\Vert_{L^1([0,1])} \end{aligned}\]
+
+<p>and the rest of the proof is similar.</p>
+
+</div>
+
+<p>As a consequence, we have the following result on weak convergence for $1&lt;p &lt; \infty$ and weak$^*$ convergence in $L^\infty$.</p>
+
+<div class="theorem">
+<p><a name="thm2"> (weak convergence) </a></p>
+
+<p>Let $g\in \mathrm{L}^\infty(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$.</p>
+
+<ul>
+  <li>
+    <p>(a) $g_n \rightharpoonup g_0$ weakly in $L^p([0,1])$ for $1&lt; p&lt;\infty$.</p>
+  </li>
+  <li>
+    <p>(b) $g_n \rightharpoonup g_0$ weak$^*$ in $L^\infty([0,1])$. 
+  <label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+  <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+  <span class="left sidenote">
+  The dual space of $L^1(I)$ is $L^\infty(I)$, i.e., \(\big(L^1(I)\big)^* = L^\infty(I).\)
+  </span></p>
+  </li>
+</ul>
+
+</div>
+
+<div class="Proof">
+<p>For part (a), we observe that if $1&lt; p&lt; \infty$ then $\mathrm{C}_c^\infty([0,1])$ is dense in $L^p([0,1])$. Take a test function $\phi \in L^q([0,1])$ where $p^{-1}+q^{-1}=1$, we aim to show that</p>
+
+<p>$ \lim_{n\to 
+\infty} \langle \phi, g_n\rangle = \langle \phi, g\rangle$.</p>
+
+<p>For $\varepsilon&gt;0$ we can find $\phi_\varepsilon\in \mathrm{C}^\infty_c([0,1])$ such that $\Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])} &lt;\varepsilon$, then by Holder’s inequality</p>
+
+\[\left|\int_0^1 \phi(x)g_n(x)\;dx - \int_0^1 \phi_\varepsilon(x)g_n(x)\;dx\right| \leq \Vert \phi_\varepsilon-\phi \Vert_{L^q([0,1])}  \Vert g_n\Vert_{L^p([0,1])} \leq C\varepsilon\]
+
+<p>where $C = \Vert g\Vert_{L^\infty(\mathbb{R})}$. Now take $n\to\infty$ using <a href="#thm2">Theorem 2</a> with $\phi_\varepsilon$ is continuous we obtain</p>
+
+\[\left|
+    \lim_{n\to \infty}\int_0^1 \phi(x)g_n(x)\;dx - \left(\int_0^1 \phi_\varepsilon(x)dx\right) \left( \int_0^1 g(x)\;dx\right)
+\right| 
+\leq C\varepsilon.\]
+
+<p>Since $\Vert \phi_\varepsilon - \phi \Vert_{L^1([0,1])} \leq \Vert \phi_\varepsilon - \phi \Vert_{L^q([0,1])} &lt; \varepsilon$ as $1\leq q$, sending $\varepsilon\to 0$ we obtain the conclusion.</p>
+
+<!-- <hr style="width:100%;text-align:left;margin-left:0"> -->
+
+<p>For part (b), the proof is basically the same, but we only consider test function
+$\phi\in L^1([0,1])$, which still satisfies that $\mathrm{C}_c^\infty([0,1])$ is dense in $L^1([0,1])$.</p>
+
+</div>
+
+<p><strong>Remark.</strong></p>
+
+<ul>
+  <li><em>Theorems <a href="#thm2">Theorem 2</a> and <a href="#thm3">Theorem 3</a> are some forms of ergodic property. Here we have used the density of continuous functions in the respective dual spaces. Another way of proving <a href="#thm2">Theorem 2</a> and <a href="#thm3">Theorem 3</a> is using the density of characteristic functions of intervals in the respective dual spaces.</em>s</li>
+  <li><em>The assumption $g\in L^\infty(\mathbb{R})$ can be replaced by $g\in L^p_{\text{loc}}(\mathbb{R})$ for a specific $p \in (0,\infty)$, and the conclusion becomes the weak convergence in $L^p([0,1])$ for that specific $p$.</em></li>
+</ul>
+
+<p>When $p=1$, the techinque we use in the above theorems do not work as $\mathrm{C}^\infty_c([0,1])$ is not dense in $L^\infty([0,1]) = (L^1([0,1))^*$. However if we have an extra assumption then inclusion implies weak convergence in $L^1([0,1])$ as follows.</p>
+
+<div class="theorem">
+<p>Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$ and $g\in L^p([0,1])$ for some $1&lt;p&lt;\infty$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$, then $ g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$, i.e.,</p>
+
+\[\lim_{n\to \infty} \int_0^1 g_n(x)\phi(x)dx =  \lim_{n\to \infty} \int_0^1 g_0(x)\phi(x)dx \qquad \text{for all}\;\phi\in L^\infty([0,1]).\]
+
+</div>
+
+<div class="Proof">
+<p>The fact that $g\in L^p([0,1])$ for $p&gt;1$ implies $g\in L^1([0,1])$ as well.</p>
+
+<p>Take $\phi\in L^\infty([0,1])$, we need to show $\langle g_n,\phi \rangle \to \langle g, \phi\rangle$ as $n\to \infty$. Since $g\in L^p([0,1])$, we see that $g_n \in L^p([0,1])$ as well and</p>
+
+\[\Vert g_n\Vert_{L^p}([0,1]) = \Vert g\Vert_{L^p}([0,1]), \qquad n = 1,2,3,\ldots\]
+
+<p>Therefore, take $q \in (0,\infty)$ such that $p^{-1} + q^{-1} = 1$, we can apply <a href="#thm3">Theorem 3</a> to obtain $g_n\rightharpoonup g$ in $L^p([0,1])$. As $\phi\in L^q([0,1])$ we deduce that</p>
+
+\[\lim_{n\to \infty}\int_0^1 \phi(x)\big(g_n(x) - g(x)\big)dx = 0.\]
+
+</div>
+
+<hr style="width:100%;text-align:left;margin-left:0" />
+
+<p>In general, we can remove this extra assumption $g\in L^p([0,1])$ for some $p&gt;1$ by using the <a href="https://en.wikipedia.org/wiki/Dunford%E2%80%93Pettis_property#:~:text=In%20functional%20analysis%2C%20the%20Dunford,Banach%20space%20are%20completely%20continuous.">Dunford-Pettis Theorem</a> given belows (<a href="#thm-Dunford-Pettis">Dunford-Pettis Theorem</a>).</p>
+
+<div class="theorem">
+<p><a name="thm5">(weak convergence)</a></p>
+
+<p>Let $g\in \mathrm{L}^1_{\text{loc}}(\mathbb{R})$ be a periodic function with period $1$. Let $g_n(x) = g(nx)$ for $n\in \mathbb{N}$ and $g_0(x)\equiv \int_0^1 g(x)dx$.</p>
+
+<ul>
+  <li>(c) $g_n \rightharpoonup g_0$ weakly in $L^1([0,1])$.</li>
+</ul>
+
+</div>
+
+<div class="Proof">
+<p>To apply Dunford-Petties theorem, it is clear that $\Vert g_n\Vert_{L^1([0,1])}  = \Vert g\Vert_{L^1([0,1])}$ for all $n$, thus it is uniformly bounded in $L^1([0,1])$ already. We only need to show that it is equi-integrable. Since tightness is trivial due to $[0,1]$ being a compact (finite) set, we only need to show that $(g_n)$ is uniformly integrable, which is a consequence of the following fact</p>
+
+\[\lim_{M\to \infty}\left( \sup_n \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx\right) = 0.\]
+
+<p>By direct computation, we have</p>
+
+\[\begin{aligned}
+        \int_{[0,1]} |g_n(x)|\cdot \mathbb{1}_{\{x\in [0,1]: |g_n(x)|\geq M\}}(x)\;dx = \int_0^1 |g(z)|\cdot \mathbb{1}_{\{z\in [0,1]: |g(z)|\geq M\}}(z)\;dz \to 0
+    \end{aligned}\]
+
+<p>uniformly as $M\to \infty$ since</p>
+
+\[|\{z\in [0,1]: |g(z)|\geq M\}| \leq \frac{1}{M}\int_0^1 |g(z)|dz \to 0\]
+
+<p>uniformly as $M\to \infty$. The uniform integrability of $(g_n)$ can be deduced from</p>
+
+\[\begin{aligned}
+    \int_E |g_n(x)|dx &amp;= \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx + \int_{E\cap \{|g_n|&lt;M\}} |g_n(x)|dx\\
+    &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx  + M|E| \\
+    &amp;\leq \int_{E\cap \{|g_n|\geq M\}} |g_n(x)|dx  + M\delta.
+\end{aligned}\]
+
+<p>Choose $\delta = (2M)^{-1}\varepsilon$ and we can choose $M$ large so that the right hand side is less than $\varepsilon$.</p>
+
+</div>
+
+<h3 id="uniform-integrability-equi-integrability-and-dunford-pettis-theorem">Uniform integrability, Equi-integrability and Dunford-Pettis Theorem</h3>
+
+<p>Before stating Dunford-Pettis Theorem, we state some definitions.</p>
+
+<div class="definition">
+<p><a name="def-Equi-integrability">(Equi-integrability).</a></p>
+
+<p>For $\Omega\subset \mathbb{R}^n$, a family of integrable functions $\mathcal{U}\subset L^1(\Omega)$ is <em>equi-integrable</em> if the following two conditions hold</p>
+
+<ul>
+  <li>(<em>Tight</em>) The set $\mathcal{U}$ is tight, i.e., for every $\varepsilon&gt;0$ there exists a measurable set $A$ with finite measure such that (trivially true if $\Omega$ is of finite measure)</li>
+</ul>
+
+\[\sup_{u\in \mathcal{U}} \int_{\Omega - A} |u(x)|dx &lt; \varepsilon.\]
+
+<ul>
+  <li>(<em>Uniform integrable</em>) For every $\varepsilon &gt; 0$ there exists $\delta &gt; 0$ such that if $E$ is a measurable set with $\vert E\vert  &lt; \delta$ then</li>
+</ul>
+
+\[\sup_{u\in \mathcal{U}} \int_E |u(x)|dx &lt; \varepsilon.\]
+
+</div>
+
+<blockquote>
+
+</blockquote>
+
+<p>Now we state the Dunford-Pettis theorem that characterizes weak convergence in $\sigma(L^1,L^\infty)$.</p>
+
+<div class="theorem"><p><a name="thm-Dunford-Pettis"><strong>Dunford-Pettis Theorem.</strong></a></p>
+
+<p>For $\Omega\subset \mathbb{R}^n$, a sequence $(u_n)\subset L^1(\Omega)$ is convergent weakly in $\sigma(L^1,L^\infty)$ if and only if</p>
+<ul>
+  <li>The sequence $(u_n)$ is equi-integrable.</li>
+  <li>The sequence $(u_n)$ is uniformly bounded in $L^1$, i.e., $\sup_n \Vert u_n\Vert_{L^1(\Omega)} \leq C$.</li>
+</ul>
+
+</div>
+
+<hr style="width:100%" />
+
+<p><strong>Remarks and Todos.</strong></p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />  Another way of proving <a href="#thm2">Theorem 2</a> and <a href="#thm3">Theorem 3</a> is using the density of characteristic functions of intervals in the respective dual spaces.</li>
+</ul>
+
+<hr style="width:100%" />
+
+
+    
+    
+
+    <div id='bibliography'>
+      <hr>
+      <div class='container'>
+          <ol class="bibliography"></ol>
+      </div>
+      <hr>
+    </div>
+
+  </div>
+
+  
+
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;June 15, 2018</span>
+  </div>
+
+  <div class="post-categories">
+    <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;Tags:&nbsp;
+      
+      
+      <a class="categories-button"<a href="/categories/#blogging">blogging</a>
+      
+      
+      <a class="categories-button"<a href="/categories/#writing">writing</a>
+      
+      
+  </div>
+
+  <!-- <div class="related-posts">
+    <div class="related-posts">
+  <i class="fa fa-list-alt fa-fw" aria-hidden="true"></i>&nbsp;<span class="related-posts-heading">Related Posts:</span><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+
+
+
+
+
+
+  
+
+  
+    
+    
+  
+    
+    
+  
+
+
+
+
+  
+    
+    
+      
+
+
+</div>
+
+  </div> -->
+
+  <div class="post-nav">
+    <div class="post-nav">
+  <p>
+    
+  </p>
+  <p>
+    
+  </p>
+</div>
+
+  </div>
+
+</article>
+
+    </div>
+
+    
+
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer"><div class="social-icons"><a class="social-icon" href="https://github.com/tunguyenthaison"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+            
+            <p>&copy; 2024 The Timeline. 
+              Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> 
+              &amp; 
+              <a href="https://github.com/tunguyenthaison/jekyll-eson" rel="nofollow">Jekyll Eson</a>.
+            </p>
+            
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- <script defer src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script>
+      const player = new Plyr("#player", { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1, playsinline: 1 , enablejsapi: 1, autoplay: 0, focused: true, global: false });
+      window.player = player;
+    </script> -->
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true
+      });
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body,{
+                    // customised options
+                    trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+                    macros: {
+                      '\\R': '\\mathbb{R}',
+                      '\\eqref': '\\href{###1}{(\\text{#1})}',
+                      '\\ref': '\\href{###1}{\\text{#1}}',
+                      '\\label': '\\htmlId{#1}{}'
+                    },
+                    // • auto-render specific keys, e.g.:
+                    delimiters: [
+                    { left: '$$',  right: '$$',  display: true  },
+                    { left: '$',   right: '$',   display: false },
+                    { left: '\\[', right: '\\]', display: true  },
+                    { left: '\\(', right: '\\)', display: false }
+                  ],
+                    // • rendering keys, e.g.:
+                    throwOnError : false
+                  });">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+        window.addEventListener('load', addDarkmodeWidget);
+      }
+      const options = {
+        label: '🌓',
+      }
+      const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+    </script>
+
+  </body>
+</html>
