@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/blogging/writing/2018/06/15/periodic-limit.html</loc>
+<loc>https://tunguyenthaison.github.io/jekyll-eson/blogging/writing/2018/06/15/periodic-limit.html</loc>
 <lastmod>2018-06-15T00:00:00-04:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/about</loc>
+<loc>https://tunguyenthaison.github.io/jekyll-eson/about.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/archive.html</loc>
+<loc>https://tunguyenthaison.github.io/jekyll-eson/archive.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/categories/</loc>
+<loc>https://tunguyenthaison.github.io/jekyll-eson/categories/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>https://tunguyenthaison.github.io/jekyll-eson/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/search</loc>
+<loc>https://tunguyenthaison.github.io/jekyll-eson/search.html</loc>
 </url>
 </urlset>
